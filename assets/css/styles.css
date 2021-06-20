@@ -52,9 +52,10 @@ body {
   height: 100%;
 
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   grid-template-areas:
-  "address"
+  "contact"
+  "contact"
   "map"
 }
 
@@ -64,11 +65,12 @@ body {
   height: 100%;
 }
 
-#address {
-  grid-area: "address";
+#address, #phone {
+  grid-area: "contact";
   display: inline;
   font-size: 1rem;
   color: #009845FF;
   font-weight: bold;
   text-align: center;
+  margin: 0.2em;
 }
