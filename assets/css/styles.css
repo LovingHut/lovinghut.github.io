@@ -1,0 +1,74 @@
+body {
+  background-color: #FFFFB9;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1fr 768px 1fr;
+  grid-template-rows: 6em auto 1fr 3em;
+  grid-template-areas:
+  ". header ."
+  ". title ."
+  ".  main  . "
+  ". footer .";
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 100vw 1fr;
+  }
+}
+
+/* Logo and Name */
+
+#logo {
+  grid-area: header;
+}
+
+#logo > img {
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+#name {
+  grid-area: title;
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+  color: #Df2E24FF;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Map and Address */
+
+#map {
+  grid-area: main;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+  "address"
+  "map"
+}
+
+#map > iframe {
+  grid-area: "map";
+  width: 100%;
+  height: 100%;
+}
+
+#address {
+  grid-area: "address";
+  display: inline;
+  font-size: 1rem;
+  color: #009845FF;
+  font-weight: bold;
+  text-align: center;
+}
